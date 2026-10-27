@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.open-meteo.com/v1/forecast?current=temperature_2m,apparent_temperature,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=7&latitude=37.4225&longitude=-122.0856&timezone=auto
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Oct 2026 16:00:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsYXRpdHVkZSI6MzcuNDE2MiwibG9uZ2l0dWRlIjotMTIyLjA4MDMsImdlbmVyYXRpb250aW1lX21zIjo4LjUwNzk2Njk5NTIzOTI1OCwidXRjX29mZnNldF9zZWNvbmRzIjotMjUyMDAsInRpbWV6b25lIjoiQW1lcmljYS9Mb3NfQW5nZWxlcyIsInRpbWV6b25lX2FiYnJldmlhdGlvbiI6IkdNVC03IiwiZWxldmF0aW9uIjo1LjAsImN1cnJlbnRfdW5pdHMiOnsidGltZSI6Imlzbzg2MDEiLCJpbnRlcnZhbCI6InNlY29uZHMiLCJ0ZW1wZXJhdHVyZV8ybSI6IsKwQyIsImFwcGFyZW50X3RlbXBlcmF0dXJlIjoiwrBDIiwid2VhdGhlcl9jb2RlIjoid21vIGNvZGUifSwiY3VycmVudCI6eyJ0aW1lIjoiMjAyNi0xMC0yN1QwOTowMCIsImludGVydmFsIjo5MDAsInRlbXBlcmF0dXJlXzJtIjoxMi4yLCJhcHBhcmVudF90ZW1wZXJhdHVyZSI6MTEuMiwid2VhdGhlcl9jb2RlIjozfSwiZGFpbHlfdW5pdHMiOnsidGltZSI6Imlzbzg2MDEiLCJ0ZW1wZXJhdHVyZV8ybV9tYXgiOiLCsEMiLCJ0ZW1wZXJhdHVyZV8ybV9taW4iOiLCsEMiLCJ3ZWF0aGVyX2NvZGUiOiJ3bW8gY29kZSJ9LCJkYWlseSI6eyJ0aW1lIjpbIjIwMjYtMTAtMjciLCIyMDI2LTEwLTI4IiwiMjAyNi0xMC0yOSIsIjIwMjYtMTAtMzAiLCIyMDI2LTEwLTMxIiwiMjAyNi0xMS0wMSIsIjIwMjYtMTEtMDIiXSwidGVtcGVyYXR1cmVfMm1fbWF4IjpbMTkuMiwyMC42LDIxLjAsMjAuNSwxNy43LDIwLjQsMjAuNF0sInRlbXBlcmF0dXJlXzJtX21pbiI6WzkuOCw3LjQsOS4zLDEzLjUsMTIuNCwxMi4zLDEyLjRdLCJ3ZWF0aGVyX2NvZGUiOls1MSwzLDMsMywzLDMsM119fQ==
+  recorded_at: Tue, 27 Oct 2026 16:00:20 GMT
+recorded_with: VCR 6.4.0
