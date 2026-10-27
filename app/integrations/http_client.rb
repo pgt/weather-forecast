@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class HttpClient
+  prepend Logging
+
   OPEN_TIMEOUT = 2
   READ_TIMEOUT = 3
 
