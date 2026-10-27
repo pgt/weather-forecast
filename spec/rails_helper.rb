@@ -16,6 +16,7 @@ Rails.root.glob('spec/support/**/*.rb').sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.use_active_record = false
+  config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
   config.include ActiveSupport::Testing::TimeHelpers

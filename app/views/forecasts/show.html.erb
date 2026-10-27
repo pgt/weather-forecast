@@ -1,0 +1,53 @@
+<% forecast = @result.forecast %>
+<% location = @result.location %>
+
+<h1>Weather Forecast</h1>
+
+<%= render 'form', search: @search %>
+
+<h2><%= location.display_name %></h2>
+
+<p>
+  Zip code: <strong><%= location.zip_code %></strong>
+  <% if @result.cached? %>
+    <mark class="cache-indicator">Cached result</mark>
+  <% else %>
+    <mark class="cache-indicator">Fresh result</mark>
+  <% end %>
+  &middot; fetched at <%= l(forecast.fetched_at.in_time_zone(forecast.timezone), format: :short) %>
+  (<%= forecast.timezone %>), refreshed every 30 minutes
+</p>
+
+<p>
+  Now: <strong><%= @formatter.temperature(forecast.current_temperature) %></strong>,
+  <%= forecast.condition %>
+  (feels like <%= @formatter.temperature(forecast.feels_like) %>)
+</p>
+
+<p>
+  Today: high <%= @formatter.temperature(forecast.today.high) %>,
+  low <%= @formatter.temperature(forecast.today.low) %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Condition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% forecast.days.each do |day| %>
+      <tr>
+        <td><%= l(day.date, format: '%a, %b %-d') %></td>
+        <td><%= @formatter.temperature(day.high) %></td>
+        <td><%= @formatter.temperature(day.low) %></td>
+        <td><%= day.condition %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'JSON', forecast_path(format: :json, address: @search.address, unit: @search.unit) %></p>

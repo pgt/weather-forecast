@@ -1,0 +1,17 @@
+<%= form_with url: forecast_path, method: :get do |form| %>
+  <p>
+    <%= form.label :address %>
+    <%= form.text_field :address, value: search.address, size: 60, required: true,
+                                  maxlength: ForecastSearch::ADDRESS_MAX_LENGTH,
+                                  placeholder: '1600 Amphitheatre Parkway, Mountain View, CA' %>
+  </p>
+
+  <p>
+    <% Forecast::Formatter::UNITS.each do |unit| %>
+      <%= form.radio_button :unit, unit, checked: search.unit == unit %>
+      <%= form.label :unit, unit.capitalize, value: unit %>
+    <% end %>
+  </p>
+
+  <%= form.submit 'Get forecast', name: nil %>
+<% end %>

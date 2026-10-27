@@ -1,0 +1,7 @@
+<h1>Weather Forecast</h1>
+
+<% if @error %>
+  <p class="error" role="alert"><%= @error %></p>
+<% end %>
+
+<%= render 'form', search: @search %>
