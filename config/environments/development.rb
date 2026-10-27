@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+require_relative '../redis_cache_store'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -27,8 +28,11 @@ Rails.application.configure do
     config.action_controller.perform_caching = false
   end
 
-  # Change to :null_store to avoid any caching.
-  config.cache_store = :memory_store
+  config.cache_store = if ENV['REDIS_URL']
+                         [:redis_cache_store, WeatherForecast::RedisCacheStore.options]
+                       else
+                         :memory_store
+                       end
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
