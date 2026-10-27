@@ -4,11 +4,12 @@ module Nominatim
   class Client
     DEFAULT_URL = 'https://nominatim.openstreetmap.org'
     DEFAULT_USER_AGENT = 'weather-forecast/1.0'
+    READ_TIMEOUT = 5
 
-    private_constant :DEFAULT_URL, :DEFAULT_USER_AGENT
+    private_constant :DEFAULT_URL, :DEFAULT_USER_AGENT, :READ_TIMEOUT
 
     def create
-      @create ||= HttpClient.new(url: url, headers: { 'User-Agent' => user_agent })
+      @create ||= HttpClient.new(url: url, headers: { 'User-Agent' => user_agent }, read_timeout: READ_TIMEOUT)
     end
 
     private
