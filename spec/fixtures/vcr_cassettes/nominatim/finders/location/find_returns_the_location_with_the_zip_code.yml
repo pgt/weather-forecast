@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?addressdetails=1&format=jsonv2&limit=1&q=1600%20Amphitheatre%20Parkway,%20Mountain%20View,%20CA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - weather-forecast/1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '793'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - gunicorn/asgi
+      X-Nominatim-Server:
+      - longma.openstreetmap.org
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Date:
+      - Tue, 27 Oct 2026 15:49:19 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-gru-sbgr1930066-GRU
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1793116159.190899,VS0,VE276
+      Vary:
+      - accept-language, Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=300
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMyMzUzMDY3OCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MjM3MzM2NTksImxhdCI6IjM3LjQyMjQ4NTgiLCJsb24iOiItMTIyLjA4NTU4NDYiLCJjYXRlZ29yeSI6ImJ1aWxkaW5nIiwidHlwZSI6ImNvbW1lcmNpYWwiLCJwbGFjZV9yYW5rIjozMCwiaW1wb3J0YW5jZSI6Ni4yNzc5NDMwODM4NDM3NzRlLTA1LCJhZGRyZXNzdHlwZSI6ImJ1aWxkaW5nIiwibmFtZSI6Ikdvb2dsZSBCdWlsZGluZyA0MSIsImRpc3BsYXlfbmFtZSI6Ikdvb2dsZSBCdWlsZGluZyA0MSwgMTYwMCwgQW1waGl0aGVhdHJlIFBhcmt3YXksIE1vdW50YWluIFZpZXcsIFNhbnRhIENsYXJhIENvdW50eSwgQ2FsaWZvcm5pYSwgOTQwNDMsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7ImJ1aWxkaW5nIjoiR29vZ2xlIEJ1aWxkaW5nIDQxIiwiaG91c2VfbnVtYmVyIjoiMTYwMCIsInJvYWQiOiJBbXBoaXRoZWF0cmUgUGFya3dheSIsImNpdHkiOiJNb3VudGFpbiBWaWV3IiwiY291bnR5IjoiU2FudGEgQ2xhcmEgQ291bnR5Iiwic3RhdGUiOiJDYWxpZm9ybmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1DQSIsInBvc3Rjb2RlIjoiOTQwNDMiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjM3LjQyMjExMjQiLCIzNy40MjI4NTA4IiwiLTEyMi4wODU5ODY4IiwiLTEyMi4wODUxNTExIl19XQ==
+  recorded_at: Tue, 27 Oct 2026 15:49:19 GMT
+recorded_with: VCR 6.4.0

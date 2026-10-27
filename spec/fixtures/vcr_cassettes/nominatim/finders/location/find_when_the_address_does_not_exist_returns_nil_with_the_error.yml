@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?addressdetails=1&format=jsonv2&limit=1&q=qwzxv%20lkjhg%20poiuy,%20nowhere%20land
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - weather-forecast/1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - gunicorn/asgi
+      X-Nominatim-Server:
+      - vhagar.openstreetmap.org
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Date:
+      - Thu, 29 Oct 2026 17:22:51 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-gru-sbgr1930084-GRU
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1793294572.583554,VS0,VE200
+      Vary:
+      - accept-language, Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=300
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+  recorded_at: Thu, 29 Oct 2026 19:51:48 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?addressdetails=1&format=jsonv2&limit=1&q=Mountain%20View,%20CA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - weather-forecast/1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '631'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - gunicorn/asgi
+      X-Nominatim-Server:
+      - vhagar.openstreetmap.org
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Date:
+      - Tue, 27 Oct 2026 15:49:20 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-gru-sbgr1930040-GRU
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1793116160.125187,VS0,VE837
+      Vary:
+      - accept-language, Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=300
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMyMjczMjMxMCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6InJlbGF0aW9uIiwib3NtX2lkIjoxNTQ0OTU2LCJsYXQiOiIzNy4zODkzODg5IiwibG9uIjoiLTEyMi4wODMyMTAxIiwiY2F0ZWdvcnkiOiJib3VuZGFyeSIsInR5cGUiOiJhZG1pbmlzdHJhdGl2ZSIsInBsYWNlX3JhbmsiOjE2LCJpbXBvcnRhbmNlIjowLjU2NzcwNzMxMTE4NDQyOTMsImFkZHJlc3N0eXBlIjoiY2l0eSIsIm5hbWUiOiJNb3VudGFpbiBWaWV3IiwiZGlzcGxheV9uYW1lIjoiTW91bnRhaW4gVmlldywgU2FudGEgQ2xhcmEgQ291bnR5LCBDYWxpZm9ybmlhLCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJjaXR5IjoiTW91bnRhaW4gVmlldyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjM3LjM1NDIxNTYiLCIzNy40NzEwNjU4IiwiLTEyMi4xMTc1NTc1IiwiLTEyMi4wNDQ5NTc0Il19XQ==
+  recorded_at: Tue, 27 Oct 2026 15:49:20 GMT
+recorded_with: VCR 6.4.0
