@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY_BASE: insecure-local-only-secret-key-base-change-me
+      RAILS_FORCE_SSL: 'false'
+      RAILS_ASSUME_SSL: 'false'
+      RAILS_MAX_THREADS: 5
+      WEB_CONCURRENCY: 2
+      NOMINATIM_USER_AGENT: ${NOMINATIM_USER_AGENT:-weather-forecast/1.0}
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'curl', '-fsS', 'http://localhost:3000/up']
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7.4-alpine
+    command: redis-server --maxmemory 64mb --maxmemory-policy allkeys-lru --save '' --appendonly no
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 5
